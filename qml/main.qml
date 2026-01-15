@@ -19,7 +19,7 @@ Window {
         width: parent.width - 40
 
         Text {
-            text: counterObj.counter
+            text: counterObj ? counterObj.counter : "counterObj is null"
             font.pointSize: 32
             color: pal.windowText
             horizontalAlignment: Text.AlignHCenter
@@ -32,20 +32,17 @@ Window {
 
             Button {
                 text: "Decrement"
-                enabled: counterObj.counter >= 30
+                enabled: counterObj && counterObj.counter >= 30
                 onClicked: counterObj.decrement()
             }
 
             Button {
                 text: "Increment"
-                enabled: counterObj.counter <= 50
-                onClicked: counterObj.increment()
+                enabled: counterObj && counterObj.counter <= 50
+                onClicked: counterObj && counterObj.increment()
             }
 
         }
-
-      
-            
             
         Slider {
             id: counterSlider
@@ -56,10 +53,10 @@ Window {
             width: parent.width
 
             // Keep the knob aligned with the backend value
-            value: counterObj.counter
+            value: counterObj && counterObj.counter
 
             // Update Rust as the user drags (real-time)
-            onValueChanged: counterObj.set_counter(Math.round(value))
+            onValueChanged: counterObj && counterObj.set_counter(Math.round(value))
         }
         
 
