@@ -147,7 +147,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "qt_hello_rust"
+name = "qt_number_slider"
 version = "0.1.0"
 dependencies = [
  "cstr",
