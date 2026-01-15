@@ -1,0 +1,8 @@
+[package]
+name = "qt_hello_rust"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+qmetaobject = "0.2"
+cstr = "0.2"
