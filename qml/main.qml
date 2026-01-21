@@ -46,7 +46,7 @@ Window {
             
         Slider {
             id: counterSlider
-            from: 29
+            from: 28
             to: 51
             stepSize: 1
             orientation: Qt.Horizontal
